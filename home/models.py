@@ -66,7 +66,7 @@ class HomePage(Page):
         ),
         MultiFieldPanel(
             [InlinePanel("carousel_images", max_num=5, min_num=1, label="Image")],
-            heading="Carousel Images",
+            heading="Carousel Images"
         ),
         StreamFieldPanel("content"),
     ]
