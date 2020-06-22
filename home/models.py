@@ -26,8 +26,12 @@ class HomePageCarouselImages(Orderable):
         on_delete=models.SET_NULL,
         related_name="+",
     )
+    caption = models.CharField(max_length=100, blank=True, null=True)
 
-    panels = [ImageChooserPanel("carousel_image")]
+    panels = [
+        ImageChooserPanel("carousel_image"),
+        FieldPanel("caption"),
+        ]
         
 class HomePage(Page):
     """Home page model."""
