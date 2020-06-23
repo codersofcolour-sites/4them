@@ -20,6 +20,7 @@ class BlogIndexPage(Page):
         [
             ("title_and_text", my_blocks.TitleAndTextBlock()),
             ("cards", my_blocks.CardBlock()),
+            ('embed', EmbedBlock(icon="media")),
         ],
         null=True,
         blank=True,
@@ -28,7 +29,8 @@ class BlogIndexPage(Page):
     subtitle = models.CharField(max_length=100, null=True, blank=True)
     
     content_panels = Page.content_panels + [
-        FieldPanel('intro', classname="full")
+        FieldPanel("subtitle"),
+        StreamFieldPanel("content"),
     ]
     def get_context(self, request):
         # Update context to include only published posts, 
