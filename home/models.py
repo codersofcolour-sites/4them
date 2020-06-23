@@ -56,7 +56,11 @@ class HomePage(Page):
         related_name="+"
    )
 
-    content = StreamField([("cta", blocks.CTABlock())], null=True, blank=True)
+    content = StreamField([
+        ("title_and_text", blocks.TitleAndTextBlock()),
+        ("cta", blocks.CTABlock())]
+        , null=True, blank=True)
+              
 
     content_panels = Page.content_panels + [
         MultiFieldPanel(

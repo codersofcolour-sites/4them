@@ -9,9 +9,23 @@ from wagtail.core import blocks
 from wagtail.admin.edit_handlers import StreamFieldPanel
 from wagtail.embeds.blocks import EmbedBlock
 
+from streams import blocks as my_blocks
 
 class BlogIndexPage(Page):
+    """Blog Index Page"""
+    template = "blog/blog_index_page.html"     
+
     intro = RichTextField(blank=True)
+    content = StreamField(
+        [
+            ("title_and_text", my_blocks.TitleAndTextBlock()),
+            ("cards", my_blocks.CardBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+
+    subtitle = models.CharField(max_length=100, null=True, blank=True)
     
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
@@ -26,6 +40,7 @@ class BlogIndexPage(Page):
     
 
 class BlogPage(Page):
+    template = "blog/blog_page.html"
     date = models.DateField("Post date")
     image = models.ForeignKey(
         'wagtailimages.Image',
