@@ -1,4 +1,6 @@
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar menus_tags %}
+
+{% get_menu "main" as navigation %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -47,20 +49,17 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/aboutus">About Us</a>
+
+                {% for item in navigation.menu_items.all %}
+                <li>
+                    <a href="{{ item.link }}" class="nav-link"{% if item.open_in_new_tab %} target="_blank"{% endif %}>{{ item.title }}</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blog projects</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Donate</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
+            {% endfor %}
+
+              <!-- <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-              </form>
+              </form> -->
             </div>
           </nav>
         <div class="container ph3 ph5-ns">
