@@ -39,8 +39,8 @@ class HomePage(Page):
     template = "home/home_page.html"
     max_count = 1
 
-    banner_title = models.CharField(max_length=100, blank=True)
-    banner_subtitle = RichTextField(max_length=100, blank=True)
+    banner_title = models.CharField(max_length=100, blank=True, null=True)
+    banner_subtitle = RichTextField(max_length=100, blank=True, null=True)
     banner_image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
