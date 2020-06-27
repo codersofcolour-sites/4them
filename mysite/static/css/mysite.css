@@ -1,7 +1,28 @@
-body{
-    background-color:#0A0A0A
-}
+header, body, footer {
+    padding: 0;
+    margin: 0;
+    font-family: 'IBM Plex Mono', monospace;
+  
+  }
 
 .rich_text {
     text-align: center !important;
 }
+
+/* Footer */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 15px 10px;
+    display: flex;
+  }
+  
+  .statement, .traffic-count, .timer {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+  }
