@@ -6,10 +6,10 @@ var trafficCountElement = document.querySelector('.traffic-count');
 
 function writeTrafficCount() {
   if (trafficCountIncrement == 1) {
-    trafficCountElement.innerText = trafficCountIncrement + ' Person trafficked since visiting this site';
+    trafficCountElement.innerText = trafficCountIncrement + ' Children died since visiting this site';
   }
   else {
-    trafficCountElement.innerText = trafficCountIncrement + ' People trafficked since visiting this site';
+    trafficCountElement.innerText = trafficCountIncrement + ' Children died since visiting this site';
   }
 }
 
@@ -27,7 +27,7 @@ function increaseTrafficCount() {
 }
 
 /* Timer */
-var timerIncrement = 40;
+var timerIncrement = 10;
 var timerElement = document.querySelector('.timer');
 
 setInterval(decreaseTimer, 1000);
@@ -36,6 +36,6 @@ function decreaseTimer() {
   timerIncrement--;
   timerElement.innerText = timerIncrement + 's';
   if (timerIncrement == 0) {
-    timerIncrement = 40;
+    timerIncrement = 10;
   }
 }
