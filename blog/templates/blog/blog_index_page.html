@@ -1,23 +1,19 @@
-{% extends "base.html" %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% extends "base.html" %} {% load wagtailcore_tags wagtailimages_tags %}
 
 <!-- @Add banner -->
-    
-{% block content %}
-    <h1>{{ page.title }}</h1>
-    <div class="intro">{{ page.intro|richtext }}</div>
-    {% for post in page.get_children %}
-        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-        {{ post.specific.date }}
-    {% endfor %}
+<div class="container mb-sm-12 mt-sm-12" style="text-align: center;">
+  {% block content %}
+  <h1>{{ page.title }}</h1>
+  <div class="intro text-center">
+    {{ page.intro|richtext }} {% for post in page.get_children %}
+    <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+    {{ post.specific.date }} {% endfor %}
+  </div>
 
-    
-<div>
-{{self.subtitle}}
+  <div class="intro text-center">
+    {{self.subtitle}}
+  </div>
 </div>
 
-{% for block in page.content %}
-    {% include_block block %}
-    {% endfor %}
-{% endblock %}
-
+{% for block in page.content %} {% include_block block %} {% endfor %} {%
+endblock %}

@@ -14,6 +14,7 @@
     {% endif %}
 </div>
 
+<div class= "container text-center">
 {# Example of an Orderable from home/models.py #}
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -41,18 +42,21 @@
 
 
 {% for block in page.content %}
-<div class= "text-center"> {% include_block block %} </div>
+<div class= "text-center"> {% include_block block %} 
+    
+</div>
 
 {% endfor %}
 
+<div class="d-flex justify-content-center">
 {% for child in self.body %}
 {% if child.block_type == 'cta' %}
-  <div class="text-center">
+
     {{ child }}
-  </div>
 {% else %}
-<div class="text-center">{{ child }}</div>
+{{ child }}</div>
 {% endif %}
 {% endfor %}
-
+</div>
+</div>
 {% endblock %}
