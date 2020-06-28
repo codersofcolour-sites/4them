@@ -1,3 +1,10 @@
+
+body {
+  min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
+}
+
 header, body, footer {
     padding: 0;
     margin: 0;
@@ -5,6 +12,7 @@ header, body, footer {
   
   }
 
+ 
 .rich_text {
     text-align: center !important;
 }
@@ -26,3 +34,38 @@ footer {
     text-align: center;
     padding: 0 20px;
   }
+
+  /* .carouselcaption {
+	position: absolute;
+	z-index: 15;
+} */
+
+   /* Small devices (landscape phones, 576px and up) */
+  .jumbotron.jumbotron-fluid.responsive { 
+    padding-bottom: 21rem;
+    background-size: cover;
+    height: 360px;
+  }
+  
+
+    /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  
+   .jumbotron.jumbotron-fluid.responsive {
+    background-size: cover;
+    height: 200px;
+    padding-bottom: 19rem;}
+}
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) { 
+  .jumbotron.jumbotron-fluid.responsive {
+  padding-bottom: 12rem;}
+}
+  /* Large devices (desktops, 992px and up) */ 
+@media (min-width: 992px) {
+  .jumbotron.jumbotron-fluid.responsive {
+    padding-bottom: 12rem;}
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+}
+

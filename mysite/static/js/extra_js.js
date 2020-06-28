@@ -18,7 +18,7 @@ if (sessionStorage.getItem('trafficCountIncrement')) {
   writeTrafficCount()
 }
 
-setInterval(increaseTrafficCount, 40000);
+setInterval(increaseTrafficCount, 10000);
 
 function increaseTrafficCount() {
   trafficCountIncrement++;

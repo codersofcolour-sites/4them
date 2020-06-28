@@ -6,7 +6,7 @@
 {% block content %}
 {% image self.banner_image width-1500 as img %}
 
-<div class="jumbotron" style="background-image: url('{{ img.url }}'); min-height: 400px; height: 10vh; background-size: cover; background-position: center center; display: flex; flex-direction: column; justify-content: center;">
+<div class="jumbotron jumbotron-fluid responsive" style="background-image: url('{{ img.url }}'); height: 360px; width:100%; background-size: cover; background-position: center center; display: flex; flex-direction: column; justify-content: center; ">
     <h1 class="display-4">{{ self.banner_title }}</h1>
     <div class="lead">{{ self.banner_subtitle|richtext }}</div>
     {% if self.banner_cta %}
@@ -21,8 +21,9 @@
         {% for slide in self.carousel_images.all %}
             {% image slide.carousel_image width-1500 as img %}
             <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+                <!-- <div class="d-flex h-100 align-items-center justify-content-center"></div> -->
                 <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
-                <h2 class="display-4">{{ slide.caption }}</h2>
+                <h2 class ="display-4 ">{{ slide.caption }}</h2>
             </div>
         {% endfor %}
     </div>
