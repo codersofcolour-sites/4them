@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'search',
     'blog',
     'menus',
+    'contact',
     'flex',
     'streams',
     'site_settings',

@@ -1,4 +1,7 @@
-{% extends "base.html" %} {% load wagtailcore_tags %} {% block content %}
+{% extends "base.html" %} 
+{% load wagtailcore_tags %} 
+{% block content %}
+
 <!-- <div>
   {{self.subtitle}}
 </div> -->
@@ -6,6 +9,8 @@
 {% for block in page.content %}
 <div class="text-center">{% include_block block %}</div>
 {% endfor %}
+
+
 <footer>
   <!-- Change traffic count to death count -->
   <div class="statement">1 child dies of hunger every 10 seconds</div>
