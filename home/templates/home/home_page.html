@@ -6,24 +6,32 @@
 {% block content %}
 {% image self.banner_image width-1500 as img %}
 
-<div class="jumbotron jumbotron-fluid responsive" style="background-image: url('{{ img.url }}'); height: 360px; width:100%; background-size: cover; background-position: center center; display: flex; flex-direction: column; justify-content: center; ">
+<!-- <div class="jumbotron jumbotron-fluid responsive" style="background-image: url('{{ img.url }}'); height: 360px; width:100%; background-size: cover; background-position: center center; display: flex; flex-direction: column; justify-content: center; ">
     <h1 class="display-4">{{ self.banner_title }}</h1>
     <div class="lead">{{ self.banner_subtitle|richtext }}</div>
     {% if self.banner_cta %}
         <a class="btn btn-primary btn-lg" href="#" role="button">@todo</a>
     {% endif %}
+</div> -->
+<div style="display:flex; justify-content: center;">
+    <img class="jumbotron jumbotron-fluid responsive" src= '{{ img.url }}' style="padding:0rem; margin:0rem auto">
 </div>
 
-<div class= "container text-center">
+
+<div class= "container text-center" style=" display: flex; flex-direction: column; align-items: center">
+
 {# Example of an Orderable from home/models.py #}
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="height: auto;width: 40vw;">
+    <div class="carousel-inner" style="height: auto; width: 40vw;">
         {% for slide in self.carousel_images.all %}
+        
             {% image slide.carousel_image width-1500 as img %}
-            <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+       
+            <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}" style="height: auto; width: 40vw;">
                 <!-- <div class="d-flex h-100 align-items-center justify-content-center"></div> -->
                 <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
-                <h2 class ="display-4 ">{{ slide.caption }}</h2>
+                <h1>{{ slide.caption }}</h1>
+
             </div>
         {% endfor %}
     </div>
