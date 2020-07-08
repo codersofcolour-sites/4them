@@ -66,13 +66,24 @@
               </form> -->
             </div>
           </nav>
+
+
+
+
+          
         <div class="container ph3 ph5-ns">
             {% block content %}{% endblock %}
         </div>
         
-        <div class="container">
-          <div class="row">
-              <div class="col-lg-12 text-center">
+
+ 
+              <div class="col-lg-12 text-center" id="footercontent">
+
+                <div class="footertext">
+                    {{self.subtitle}}
+                </div>
+
+                <div class="socialicons">
                   {% if settings.site_settings.SocialMediaSettings.facebook %}
                       <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}">
                           <i class="fab fa-facebook-f"></i>
@@ -87,10 +98,15 @@
                       <a href="{{ settings.site_settings.SocialMediaSettings.youtube }}">
                           <i class="fab fa-youtube"></i>
                       </a>
+        
                   {% endif %}
+
               </div>
-          </div>
-      </div>
+              <div class="footertext">
+                {{self.subtitle}}
+              </div>
+            </div>
+
 
         {# Global javascript #}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

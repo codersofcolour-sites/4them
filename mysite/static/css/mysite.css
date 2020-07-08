@@ -68,3 +68,49 @@ footer {
 }
 
 
+#footercontent {
+display:flex;
+justify-content: space-between;
+flex-wrap: wrap;
+background-color: black;
+padding: 2rem;
+}
+
+#footercontent a i {
+  font-size: 1.5rem;
+  padding: 0 1rem;
+} 
+
+.footertext {
+
+  color: azure;
+}
+
+/*mobile 600px */
+@media ( max-width: 600px) { 
+#footercontent {
+  justify-content: center;
+  align-items: center;
+}}
+
+#carouselExampleControls {
+
+  position: relative;
+}
+
+.carouselcaption {
+  position: absolute;
+  font-size: 1.2rem;
+  color: ghostwhite;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+#carouselExampleControls {
+  height: 400px;
+  overflow: hidden;
+  
+}
