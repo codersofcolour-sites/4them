@@ -79,6 +79,8 @@ class HomePage(Page):
         StreamFieldPanel("content"),
     ]
 
+    
+
     class Meta:
 
         verbose_name = "Home Page"
