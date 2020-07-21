@@ -3,6 +3,8 @@
 <!-- @Add banner -->
 <div class="container mb-sm-12 mt-sm-12" style="text-align: center;">
   {% block content %}
+
+  <div class="container ph3 ph5-ns"> 
   <h1>{{ page.title }}</h1>
   <div class="intro text-center">
     {{ page.intro|richtext }} {% for post in page.get_children %}
@@ -25,4 +27,5 @@
 </div>
 
 <script src="js/mysite.js"></script>
+</div>
 {% endblock %}

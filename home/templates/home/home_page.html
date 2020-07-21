@@ -45,13 +45,16 @@
     </a>
 </div>
 
+<div class="container ph3 ph5-ns"> 
+
 <div>
 {{self.subtitle}}
 </div>
-
+</div>
 
 {% for block in page.content %}
-<div class= "text-center"> {% include_block block %} 
+<div class= "text-center" style="width: 98%; margin: 8px;">
+     {% include_block block %} 
 
 </div>
 

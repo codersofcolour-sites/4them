@@ -100,18 +100,19 @@ padding: 2rem;
 
 .carouselcaption {
   position: absolute;
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   color: ghostwhite;
   text-align: center;
-  top: 50%;
+  top: 23%;
   left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
 }
 
 #carouselExampleControls {
-  height: 400px;
+  max-height: 572px;
   overflow: hidden;
+  width: 100%;
   
 }
 

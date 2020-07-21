@@ -7,6 +7,8 @@
 </div> -->
 
 {% for block in page.content %}
+
+<div class="container ph3 ph5-ns"> 
 <div class="text-center">{% include_block block %}</div>
 {% endfor %}
 
@@ -20,4 +22,6 @@
 </div>
 
 <script src="js/mysite.js"></script>
+
+</div>
 {% endblock %}
