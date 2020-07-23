@@ -16,7 +16,7 @@ if (sessionStorage.getItem('trafficCountIncrement')) {
   writeTrafficCount()
 }
 
-setInterval(increaseTrafficCount, 10000);
+setInterval(increaseTrafficCount, 15000);
 
 function increaseTrafficCount() {
   trafficCountIncrement++;
@@ -25,7 +25,7 @@ function increaseTrafficCount() {
 }
 
 /* Timer */
-var timerIncrement = 10;
+var timerIncrement = 15;
 var timerElement = document.querySelector('.timer');
 
 setInterval(decreaseTimer, 1000);
@@ -34,6 +34,6 @@ function decreaseTimer() {
   timerIncrement--;
   timerElement.innerText = timerIncrement + 's';
   if (timerIncrement == 0) {
-    timerIncrement = 10;
+    timerIncrement = 15;
   }
 }
