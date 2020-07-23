@@ -1,0 +1,86 @@
+{# templates/donate/donate_page.html #}
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+    
+{% block content %}
+{% image self.banner_image width-1500 as img %}
+
+<!-- <div class="jumbotron jumbotron-fluid responsive" style="background-image: url('{{ img.url }}'); height: 360px; width:100%; background-size: cover; background-position: center center; display: flex; flex-direction: column; justify-content: center; ">
+    <h1 class="display-4">{{ self.banner_title }}</h1>
+    <div class="lead">{{ self.banner_subtitle|richtext }}</div>
+    {% if self.banner_cta %}
+        <a class="btn btn-primary btn-lg" href="#" role="button">@todo</a>
+    {% endif %}
+</div> -->
+<div style="display:flex; justify-content: center;">
+    <img class="jumbotron jumbotron-fluid responsive" src= '{{ img.url }}' style="padding:0rem; margin:0rem auto">
+</div>
+
+
+<div class= "homepagecontainer" style=" display: flex; flex-direction: column; align-items: center">
+
+{# Example of an Orderable from home/models.py #}
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+    <div class="carousel-inner" style="height: auto; width: 100%;">
+        {% for slide in self.carousel_images.all %}
+        
+            {% image slide.carousel_image width-1500 as img %}
+       
+            <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}" >
+                <!-- <div class="d-flex h-100 align-items-center justify-content-center"></div> -->
+                <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}" style="object-fit: cover;">
+                <span class="carouselcaption">{{ slide.caption }}</span>
+
+            </div>
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="container ph3 ph5-ns"> 
+
+<div>
+{{self.subtitle}}
+</div>
+</div>
+
+{% for block in page.content %}
+<div class= "text-center" style="width: 98%; margin: 8px;">
+     {% include_block block %} 
+
+</div>
+
+{% endfor %}
+
+<div class="d-flex justify-content-center">
+{% for child in self.body %}
+{% if child.block_type == 'cta' %}
+
+    {{ child }}
+{% else %}
+{{ child }}</div>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+
+<footer>
+    
+     <div class="statement">1 child dies of hunger every 10 seconds</div>
+    <div class="timer">10s</div>
+    <div class="traffic-count">0 Children died since visiting this site</div>
+</footer>
+</div>
+
+<script src="js/mysite.js"></script>
+
+
+{% endblock %}
