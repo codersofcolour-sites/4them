@@ -22,11 +22,10 @@ class BlogIndexPage(Page):
             ("cards", my_blocks.CardBlock()),
             ('embed', EmbedBlock(icon="media")),
         ],
-        null=True,
         blank=True,
     )
 
-    subtitle = models.CharField(max_length=100, null=True, blank=True)
+    subtitle = models.CharField(max_length=100, blank=True)
     
     content_panels = Page.content_panels + [
         FieldPanel("subtitle"),
